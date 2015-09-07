@@ -1,9 +1,7 @@
-# Extempore-Atom
-
-<img src="assets/xtm.png" width="100px"> <img src="https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif" alt="Atom packaging" width="60px">
+# <img src="assets/xtm.png" width="160px">-Atom
 
 An Atom package for
-[Extempore](https://github.com/digego/extempore).  The package provides commands for interacting with a running Extempore process.
+[Extempore](https://github.com/digego/extempore).  The package provides commands for interacting with a running Extempore prcess.
 
 # Installation
 This package has not been published yet. Installation instructions will be added soon.
