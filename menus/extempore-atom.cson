@@ -10,11 +10,19 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'extempore-atom'
+      'label': 'Extempore'
       'submenu': [
         {
-          'label': 'Toggle'
-          'command': 'extempore-atom:toggle'
+          'label': 'Connect'
+          'command': 'extempore-atom:Connect'
+        }
+        {
+          'label': 'Disconnect'
+          'command': 'extempore-atom:Disconnect'
+        },
+        {
+          'label': 'Evaluate'
+          'command': 'extempore-atom:Evaluate'
         }
       ]
     ]
