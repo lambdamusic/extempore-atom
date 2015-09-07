@@ -1,0 +1,8 @@
+{
+  ".editor": {
+    "alt-o": "extempore-atom:Connect",
+    "alt-O": "extempore-atom:Disconnect",
+    "alt-x": "extempore-atom:Disconnect",
+    "alt-w": "extempore-atom:Evaluate"
+  }
+}
