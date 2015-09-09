@@ -1,3 +1,8 @@
+## 0.1.1 - Evaluation Highlighting
+* Expressions are highlighted upon being sent for evaluation
+
+## 0.1.0 (0.0.4) - Published to Atom
+
 ## 0.0.4 - Snippets
 * Snippets have been converted from Extempore-Sublime
 

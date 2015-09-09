@@ -1,10 +1,10 @@
-# <img src="assets/xtm-atom.png" width="350px" alt="Extempore-Atom">
+# <img src="https://raw.githubusercontent.com/noahingham/extempore-atom/master/assets/xtm-atom.png" width="350px" alt="Extempore-Atom">
 
 An Atom package for
 [Extempore](https://github.com/digego/extempore), providing syntax highlighting, snippets and commands for working with Extempore.
 
 # Installation
-This package has not been published yet. Installation instructions will be added soon.
+Extempore-Atom can be installed by going to `Preferences > Packages` in Atom and searching for extempore-atom or by running `apm install extempore-atom` in a terminal.
 
 Installation instructions for Extempore can be found at
 [Extempore's github page](https://github.com/digego/extempore).
@@ -13,19 +13,15 @@ Installation instructions for Extempore can be found at
 
 The plugin provides three commands:
 
-- `Connect` [alt-o] will connect to a running Extempore process at 172.0.0.1:7099 (the default port). You have to start the Extempore process yourself (in a terminal).
+- `Connect` [alt-o] will connect to a running Extempore process at 172.0.0.1:7099 (the default port). You have to start the Extempore process yourself (see Extempore docs for how to do this).
 
 - `Disconnect` [alt-O or alt-x] will disconnect from the connected Extempore process.
 
 - `Evaluate` [alt-w] will evaluate either the
   currently highlighted region (if applicable) or the current
-  top-level def surrounding the cursor. This is how you send code to
+  top-level expression surrounding the cursor. This is how you send code to
   the Extempore process for evaluation.
 
 You can trigger the commands either through the menu (`Packages >
 Extempore`), or the command palette (`ctrl+shift+P`) or through the
 shortcut keys (listed above).
-
-# TODO
-
-* Highlighting expressions upon evaluation
