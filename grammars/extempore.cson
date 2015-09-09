@@ -1,7 +1,7 @@
 fileTypes: [
   "xtm"
 ]
-name: "xtlang"
+name: "Extempore"
 patterns: [
   {
     captures:
@@ -27,7 +27,7 @@ patterns: [
         name: "entity.name.function.extempore"
       "6":
         name: "support.type.extempore"
-    match: "\\((bind-alias|bind-type|bind-val|bind-poly)(\\s+)((\\w|\\-|\\!|\\?)+)(\\s+)(([^  \\)])+)"
+    match: "\\((bind-alias|bind-type|bind-val|bind-poly)(\\s+)((\\w|\\-|\\!|\\?)+)(\\s+)(([^ \t\\)])+)"
     name: "meta.type.binding.extempore"
   }
   {
@@ -38,7 +38,7 @@ patterns: [
         name: "entity.name.function.extempore"
       "9":
         name: "support.type.extempore"
-    match: "\\((bind-lib|bind-lib-func|bind-lib-type|bind-lib-val|bind-lib-type-no-scm)(\\s+)((\\w|\\-|\\!|\\?)+)(\\s+)((\\w|\\-|\\!|\\?)+)(\\s+)(([^   \\)])+)"
+    match: "\\((bind-lib|bind-lib-func|bind-lib-type|bind-lib-val|bind-lib-type-no-scm)(\\s+)((\\w|\\-|\\!|\\?)+)(\\s+)((\\w|\\-|\\!|\\?)+)(\\s+)(([^ \t\\)])+)"
     name: "meta.lib.binding.extempore"
   }
   {
@@ -58,7 +58,7 @@ patterns: [
     name: "variable.other.global.extempore"
   }
   {
-    match: ":([^  \\)])+"
+    match: ":([^ \t\\)])+"
     name: "support.type.extempore"
   }
   {
@@ -97,7 +97,7 @@ patterns: [
     name: "string.quoted.double.extempore"
     patterns: [
       {
-        match: "\\."
+        match: "\\\\."
         name: "constant.character.escape.extempore"
       }
     ]

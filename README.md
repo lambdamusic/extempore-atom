@@ -1,7 +1,7 @@
-# <img src="assets/xtm-atom.png" width="350px">
+# <img src="assets/xtm-atom.png" width="350px" alt="Extempore-Atom">
 
 An Atom package for
-[Extempore](https://github.com/digego/extempore).  The package provides commands for interacting with a running Extempore process.
+[Extempore](https://github.com/digego/extempore), providing syntax highlighting, snippets and commands for working with Extempore.
 
 # Installation
 This package has not been published yet. Installation instructions will be added soon.
@@ -28,5 +28,4 @@ shortcut keys (listed above).
 
 # TODO
 
-* Snippets
 * Highlighting expressions upon evaluation
