@@ -1,18 +1,18 @@
 ".source.extempore":
-  aref:
-    prefix: "aref"
-    body: "(aref$1 ${2:dat} ${3:index})"
-  aset:
-    prefix: "aset"
-    body: "(aset! ${1:dat} ${2:index} ${3:value})"
+  'aref':
+    'prefix': "aref "
+    'body': "(aref$1 ${2:dat} ${3:index})"
+  'aset':
+    'prefix': "aset"
+    'body': "(aset! ${1:dat} ${2:index} ${3:value})"
   assoc:
-    prefix: "assoc"
+    prefix: "assoc "
     body: "(assoc $1 '(($0)))"
   "bind-alias":
-    prefix: "binda"
+    prefix: "binda "
     body: "(bind-alias ${1:name} ${2:type})"
   "bind-func-let":
-    prefix: "bflet"
+    prefix: "bflet "
     body: '''
       (bind-func ${1:func-name}
         (let (($2))
@@ -20,23 +20,23 @@
             $0)))
     '''
   "bind-func":
-    prefix: "bf"
+    prefix: "bf "
     body: '''
       (bind-func ${1:func-name}
         (lambda ($2)
           $0))
     '''
   "bind-lib":
-    prefix: "bindl"
+    prefix: "bindl "
     body: "(bind-lib ${1:lib-name} ${2:fn-name} ${3:type})"
   "bind-type":
-    prefix: "bindt"
+    prefix: "bindt "
     body: "(bind-type ${1:name} ${2:type})"
   "bind-val":
-    prefix: "bindv"
+    prefix: "bindv "
     body: "(bind-val ${1:name} ${2:type} ${3:value})"
   "build-multi-chan-2":
-    prefix: "bmc2"
+    prefix: "bmc2 "
     body: '''
       (if *build-multi-chan*
           (bind-func ${1:name}_mc_c
@@ -48,7 +48,7 @@
       	    ((pref $1_buf (dtoi64 chan))$4))))))
     '''
   "build-multi-chan":
-    prefix: "bmc"
+    prefix: "bmc "
     body: '''
       (if *build-multi-chan*
           (bind-func ${1:name}_mc_c
@@ -60,16 +60,16 @@
       	    val)))))
     '''
   "call-inst":
-    prefix: "inst"
+    prefix: "inst "
     body: "(${1:inst-name} in time chan dat)"
   "column-major":
-    prefix: "colmaj"
+    prefix: "colmaj "
     body: '''
       (col_maj (lambda (r c)
       	    (+ r (* c ${1:num_rows}))))
     '''
   "compile-module":
-    prefix: "compilemod"
+    prefix: "compilemod "
     body: '''
       (llvm:export-module "`module-path`${1:core}/${2:libname}.bc")
 
@@ -82,31 +82,31 @@
       (load "libs/core/$2.xtmh")
     '''
   "cond-mod":
-    prefix: "cm"
+    prefix: "cm "
     body: '''
       (cond ((< (modulo beat ${1:1}) ${2:0})$0)
             (else ${3:0}))
     '''
   cond:
-    prefix: "cond"
+    prefix: "cond "
     body: '''
       (cond (($0))
             (else 0))
     '''
   "cos-frame":
-    prefix: "cosf"
+    prefix: "cosf "
     body: "(cos_frame frame ${1:[dc]} ${2:amp} ${3:freq})"
   "cos-iter-var":
-    prefix: "cosi"
+    prefix: "cosi "
     body: "(cos_iter ${1:[phase_offset]} ${2:i} ${3:n})"
   "cos-xtlang":
-    prefix: "cosx"
+    prefix: "cosx "
     body: "(cos (/ (* TWOPI time ${1:frequency}) SR))"
   cosr:
-    prefix: "cosr"
+    prefix: "cosr "
     body: "(cosr ${1:dc} ${2:amp} ${3:freq})"
   "define-inst":
-    prefix: "dinst"
+    prefix: "dinst "
     body: '''
       (bind-func ${1:name}_note_c
         (lambda (nargs:i64 dargs:float*)
@@ -125,7 +125,7 @@
       ($1.sustain 0.6)
     '''
   "sampler-setup":
-    prefix: "dsamp"
+    prefix: "dsamp "
     body: '''
       (load "libs/external/instruments.xtm")
       (load "/Users/ben/Code/xtm/lib/sampler-maps.xtm")
@@ -135,14 +135,14 @@
       (sm-load-map $1 ${2:sample-map})
     '''
   define:
-    prefix: "df"
+    prefix: "df "
     body: '''
       (define ${1:func-name}
         (lambda ($2)
           $0))
     '''
   "dotimes-path":
-    prefix: "dtpath"
+    prefix: "dtpath "
     body: '''
       (dotimes (i n)
         (xtm_paint_setup_fill fill 1. 1. 1. 1.)
@@ -150,13 +150,13 @@
         (xtm_draw_rect$0 0. 0. width height))
     '''
   dotimes:
-    prefix: "dotimes"
+    prefix: "dotimes "
     body: '''
       (dotimes (${1:i} ${2:[start] num})
         $0)
     '''
   dsp:
-    prefix: "dsp"
+    prefix: "dsp "
     body: '''
       (bind-func dsp:[float,float,i64,i64,float*]*
         (lambda (in time chan dat)
@@ -165,10 +165,10 @@
       ${1:(dsp:set! dsp)}
     '''
   "for-each":
-    prefix: "feach"
+    prefix: "feach "
     body: "(for-each (lambda ($0)))"
   "gl-loop":
-    prefix: "glloop"
+    prefix: "glloop "
     body: '''
       (sys:load "libs/xtm.xtm")
       (sys:load "libs/external/shaders.xtm")
@@ -205,53 +205,56 @@
       (gl-loop (now) ${10:1/30})
     '''
   "header-primary":
-    prefix: "headerp"
+    prefix: "headerp "
     body: "(sys:load \"`default-directory`setup.xtm\")"
   "header-utility":
-    prefix: "headeru"
+    prefix: "headeru "
     body: '''
       ;-*- mode: Extempore; extempore-default-port: 7098; -*-
       (ipc:load "primary" "`default-directory`setup.xtm")
 
     '''
   "if-alternating":
-    prefix: "ifalt"
+    prefix: "ifalt "
     body: "(if (= ${1:var} ${2:a}) ${3:b} $2)"
   "if-falling":
-    prefix: "iffall"
+    prefix: "iffall "
     body: "(if (> ${1:var} ${2:min-val}) (- $1 ${3:inc}) ${4:max-val})"
   "if-mod-frame":
-    prefix: "imf"
+    prefix: "imf "
     body: "(if (${1:=} (modulo frame ${2:30}) ${3:0}) $0)"
   "if-mod-xtlang":
-    prefix: "imx"
+    prefix: "imx "
     body: "(if (${1:=} (modulo (/ time SR) ${2:1.0}) ${3:0.0}) $0)"
   "if-mod":
-    prefix: "im"
+    prefix: "im "
     body: "(if (${1:=} (modulo beat ${2:1}) ${3:0}) $0)"
   "if-not-null":
-    prefix: "inn"
+    prefix: "inn "
     body: "(if (not (null? $1))$0)"
   "if-null-set":
-    prefix: "ifnull"
+    prefix: "ifnull "
     body: "(if (null? ${1:x}) (set! $1 $0))"
   "if-rising":
-    prefix: "ifris"
+    prefix: "ifris "
     body: "(if (< ${1:var} ${2:max-val}) (+ $1 ${3:inc}) ${4:min-val})"
   inc:
-    prefix: "inc"
+    prefix: "inc "
     body: "(set! ${1:var} (${2:+} $1 $0))"
   "ipc-bind-func":
-    prefix: "ipcbf"
+    prefix: "ipcbf "
     body: "(ipc:bind-func \"${1:utility}\" '${2:func_name})"
   lambda:
-    prefix: "lam"
+    prefix: "lambda "
+    body: "(lambda ($0))"
+  b_lambda:
+    prefix: "\(lambda\)"
     body: "(lambda ($0))"
   let:
-    prefix: "let"
+    prefix: "let "
     body: "(let (($0)))"
   "lib-loader-config":
-    prefix: "libconf"
+    prefix: "libconf "
     body: '''
       (sys:load-preload-check '${1:libname})
       (define *xtmlib-$1-loaded* #f)
@@ -260,41 +263,41 @@
       (print "done.\\n")
     '''
   "load-module":
-    prefix: "loadmod"
+    prefix: "loadmod "
     body: '''
       (define ${1:libname} (sys:open-dylib "/Users/ben/Code/xtm/dylibs/$1.dylib"))
       (load "libs/${2:core}/$1.xtmh")
     '''
   "load-sampler":
-    prefix: "loadsamp"
+    prefix: "loadsamp "
     body: "(load-sampler ${1:sampler} ${2:\"~/Documents/samples/\"} ${3:bank} ${4:parse-sample-names-1})"
   load:
-    prefix: "load"
+    prefix: "load "
     body: "(sys:load \"libs/$0.xtm\")"
   "map-1":
-    prefix: "map1"
+    prefix: "map1 "
     body: "(map (lambda (${1:x}) ($0$1)))"
   map:
-    prefix: "map"
+    prefix: "map "
     body: "(map (lambda ($0)))"
   "metro-get-beat":
-    prefix: "mgb"
+    prefix: "mgb "
     body: "(*metro* 'get-beat ${1:4})"
   "metro-set-tempo":
-    prefix: "mst"
+    prefix: "mst "
     body: "(*metro* 'set-tempo ${1:120})"
   "nargs-test":
-    prefix: "ifnargs"
+    prefix: "ifnargs "
     body: "(if (> nargs ${1:0}) (pref dargs $1) ${2:else-val})"
   "new-process":
-    prefix: "ipcnew"
+    prefix: "ipcnew "
     body: '''
       (ipc:new "${1:process-name}" ${2:port})
       (ipc:bind-func "$1" '${3:func_name})
       (ipc:call-async "$1" '$3)
     '''
   "openvg-frame":
-    prefix: "vgframe"
+    prefix: "vgframe "
     body: '''
       (bind-func vgframe:XTMRENDERCB
         (lambda (frame shader m v p data)
@@ -317,7 +320,7 @@
           void))
     '''
   "openvg-loop":
-    prefix: "vgloop"
+    prefix: "vgloop "
     body: '''
       (define width ${1:`(display-pixel-width)`.0})
       (define height ${2:`(display-pixel-height)`.0})
@@ -337,80 +340,80 @@
 
     '''
   "pc:chord-options":
-    prefix: "pcopt"
+    prefix: "pcopt "
     body: "(pc:chord-options ${1:root} '${2:^} ${3:pc}$0)"
   "pc:chord":
-    prefix: "pcchord"
+    prefix: "pcchord "
     body: "(pc:chord ${1:root} '${2:$$(yas/choose-value '(\"^\" \"^sus\" \"^6\" \"^64\" \"^7\" \"^65\" \"^43\" \"^42\" \"^2\" \"^7#4\" \"^9\" \"7\" \"9\" \"65\" \"43\" \"2\" \"42\" \"-\" \"-sus\" \"-6\" \"-64\" \"-7\" \"-65\" \"-43\" \"-42\" \"-2\" \"-9\" \"o\" \"o6\" \"o64\" \"o7\" \"o65\" \"o43\" \"o42\" \"o2\" \"-7b5\"))})"
   "pc-diatonic":
-    prefix: "pcdia"
+    prefix: "pcdia "
     body: "(pc:diatonic ${1:root} '${2:^-} '${3:degree})"
   "pc:make-chord":
-    prefix: "pcmc"
+    prefix: "pcmc "
     body: "(pc:make-chord ${1:lower} ${2:upper} ${3:number} ${4:pcchord}$0)"
   "pc:quantize":
-    prefix: "pcquant"
+    prefix: "pcquant "
     body: "(pc:quantize ${1:pitch-in} ${2:pcscale}$0)"
   "pc-random":
-    prefix: "pcrand"
+    prefix: "pcrand "
     body: "(pc:random ${1:lower} ${2:upper} ${3:pcscale}$0)"
   "pc:relative":
-    prefix: "pcrel"
+    prefix: "pcrel "
     body: "(pc:relative ${1:pitch} ${2:step} pcscale$0)"
   "pc:scale":
-    prefix: "pcscale"
+    prefix: "pcscale "
     body: "(pc:scale ${1:0} '${2:$$(yas/choose-value '(\"pentatonic\" \"wholetone\" \"chromatic\" \"octatonic\" \"messiaen1\" \"messiaen2\" \"messiaen3\" \"messiaen4\" \"messiaen5\" \"messiaen6\" \"messiaen7\" \"ionian\" \"dorian\" \"phrygian\" \"lydian\" \"lydian-dominant\" \"lydian-mixolydian\" \"mixolydian\" \"aeolian\" \"locrian\"))})"
   "play-chord":
-    prefix: "pchord"
+    prefix: "pchord "
     body: '''
       (for-each (lambda (p)
       	    (play ${1:inst} p ${2:80} ${3:dur}))
       	  (pc:make-chord ${4:lower} ${5:upper} ${6:number} ${7:pcchord}$0))
     '''
   "play-note":
-    prefix: "playnote"
+    prefix: "playnote "
     body: "(play-note (now) ${1:inst} ${2:60} ${3:80} ${4:44100})"
   play:
-    prefix: "play"
+    prefix: "play "
     body: "(play ${1:inst} ${2:60} ${3:80} ${4:dur})"
   pref:
-    prefix: "pref"
+    prefix: "pref "
     body: "(pref$1 ${2:dat} ${3:index})"
   "printf-debug":
-    prefix: "pfd"
+    prefix: "pfd "
     body: "(printf \"$1\\n\" ${1:$(replace-regexp-in-string \"\\\\\\\\(:\\\\\\\\| =\\\\\\\\) %\\\\\\\\(lld\\\\\\\\|d\\\\\\\\|f\\\\\\\\|p\\\\\\\\|s\\\\\\\\|c\\\\\\\\)\" \"\" yas-text)})"
   printf:
-    prefix: "pf"
+    prefix: "pf "
     body: "(printf \"$1\\n\"$0)"
   println:
-    prefix: "pl"
+    prefix: "pl "
     body: "(println $0)"
   prob:
-    prefix: "prob"
+    prefix: "prob "
     body: '''
       (if (< (random) ${1:prob})
           $0)
     '''
   pset:
-    prefix: "pset"
+    prefix: "pset "
     body: "(pset! ${1:dat} ${2:index} ${3:value})"
   quantize:
-    prefix: "quant"
+    prefix: "quant "
     body: "(- ${1:val} (% $1 ${2:step}))"
   "random-list":
-    prefix: "rlist"
+    prefix: "rlist "
     body: "(random '($0))"
   "range-test":
-    prefix: "rtest"
+    prefix: "rtest "
     body: "(if (and (>= ${1:x} ${2:lower}) (<= $1 ${3:upper})) $0)"
   rassoc:
-    prefix: "rassoc"
+    prefix: "rassoc "
     body: "(random (cdr (assoc ${1:key} '(($0)))))"
   scale:
-    prefix: "scale"
+    prefix: "scale "
     body: "(+ ${1:dc} (* ${2:amp} $0))"
   "set-up-instrument":
-    prefix: "sinst"
+    prefix: "sinst "
     body: '''
       (define-instrument ${1:inst} $1_note_c $1_fx)
 
@@ -420,7 +423,7 @@
       ($1.sustain 0.6)
     '''
   "stereo-cond":
-    prefix: "scond"
+    prefix: "scond "
     body: '''
       (cond ((< chan 0.5)
              ${1:out})
@@ -429,19 +432,19 @@
             (else 0.0))
     '''
   "stereo-dsp":
-    prefix: "sdsp"
+    prefix: "sdsp "
     body: '''
       ($1l ($2_c$3))
       ($1r ($2_c$3))
     '''
   "sync-metro":
-    prefix: "syncmetro"
+    prefix: "syncmetro "
     body: '''
       (ipc:connect "${1:server-ip}" "${2:server-name}" ${3:server-port})
       (clock:update-metro "$2" "${4:client-name}")
     '''
   "temporal-recursion-timed":
-    prefix: "trt"
+    prefix: "trt "
     body: '''
       (define ${1:fun-name}
         (lambda (time delta-t$2)
@@ -454,7 +457,7 @@
       ($1 (now) ${4:1})
     '''
   "temporal-recursion-xtlang":
-    prefix: "trx"
+    prefix: "trx "
     body: '''
       (bind-func ${1:fun-name}
         (lambda (beat dur)
@@ -464,7 +467,7 @@
       ($1 (*metro* 'get-beat 4) ${2:1/4})
     '''
   "temporal-recursion":
-    prefix: "tr"
+    prefix: "tr "
     body: '''
       (define ${1:fun-name}
         (lambda (beat dur$2)
@@ -474,22 +477,22 @@
       ($1 (*metro* 'get-beat ${4:4}) ${5:1/4})
     '''
   tref:
-    prefix: "tref"
+    prefix: "tref "
     body: "(tref$1 ${2:dat} ${3:index})"
   tset:
     prefix: "tset"
     body: "(tset! ${1:dat} ${2:index} ${3:value})"
   ugen:
-    prefix: "ugen"
+    prefix: "ugen "
     body: "(${1:osc} ${2:amp} ${3:freq})"
   "width-height-half":
-    prefix: "wh2"
+    prefix: "wh2 "
     body: "(* width .5) (* height .5)"
   "width-height-random":
-    prefix: "whr"
+    prefix: "whr "
     body: "(* (random) width) (* (random) height)"
   "width-height-setup":
-    prefix: "whsetup"
+    prefix: "whsetup "
     body: '''
       (define width `(display-pixel-width)`.0)
       (define height `(display-pixel-height)`.0)
@@ -499,10 +502,10 @@
 
     '''
   "width-height":
-    prefix: "wh"
+    prefix: "wh "
     body: "width height"
   xtest:
-    prefix: "xtest"
+    prefix: "xtest "
     body: '''
       (bind-func test_${1:name}
         (lambda ()
@@ -511,7 +514,7 @@
       (test-xtfunc (test_$1))
     '''
   "xtlang-accessor":
-    prefix: "xtacc"
+    prefix: "xtacc "
     body: '''
       (bind-func ${1:tuple_name}_${2:field_name}
         (lambda (${3:tuple_var}:$1_t*)
@@ -522,10 +525,10 @@
           (tset! $3 $4 $2)))
     '''
   "xtm-draw-path":
-    prefix: "xdp"
+    prefix: "xdp "
     body: "(xtm_${1:draw}_path$2 path)"
   "xtm-lib-header":
-    prefix: "xtmlibhead"
+    prefix: "xtmlibhead "
     body: '''
       ;;; `(buffer-name)` -- $1
 
@@ -542,13 +545,13 @@
       $0
     '''
   "xtm-path-rotate":
-    prefix: "xtmrot"
+    prefix: "xtmrot "
     body: "(xtm_path_rotate $0)"
   "xtm-path-translate":
-    prefix: "xtmtrans"
+    prefix: "xtmtrans "
     body: "(xtm_path_translate $0)"
   "xtm-render-callback":
-    prefix: "rendercb"
+    prefix: "rendercb "
     body: '''
       (bind-func ${1:$$(yas/choose-value '("pre" "opaque" "transparent" "post" "data"))}:XTMRENDERCB
         (lambda (frame shader m v p data)
