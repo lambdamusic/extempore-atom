@@ -1,7 +1,7 @@
 {
   "name": "Extempore-Atom",
   "main": "./lib/extempore-atom",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A package to work with the Extempore live-coding environment",
   "keywords": [],
   "activationCommands": {
