@@ -13,7 +13,7 @@ Installation instructions for Extempore can be found at
 
 The plugin provides three commands:
 
-- `Connect` [alt-o] will connect to a running Extempore process at 172.0.0.1:7099 (the default port). You have to start the Extempore process yourself (see Extempore docs for how to do this).
+- `Connect` [alt-o] will connect to a running Extempore process at the host and port specified in the input box. You have to start the Extempore process yourself (see Extempore docs for how to do this).
 
 - `Disconnect` [alt-O or alt-x] will disconnect from the connected Extempore process.
 

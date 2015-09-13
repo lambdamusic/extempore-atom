@@ -81,12 +81,12 @@ connect = ->
   @dialog.attach()
   @dialog.on 'file-created', (event, createdPath) =>
     @dialog.close()
-    connect_rest(createdPath)
+    connect_to_host(createdPath)
 
-connect_rest = (string) ->
+connect_to_host = (string) ->
   [HOST, PORT] = string.split(":")
   if !HOST
-    HOST=localhost
+    HOST='localhost'
   if !PORT
     PORT=7099
 
