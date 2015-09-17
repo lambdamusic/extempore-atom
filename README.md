@@ -25,3 +25,7 @@ The plugin provides three commands:
 You can trigger the commands either through the menu (`Packages >
 Extempore`), or the command palette (`ctrl+shift+P`) or through the
 shortcut keys (listed above).
+
+# Preview
+
+![Extempore-Atom preview](https://raw.githubusercontent.com/noahingham/extempore-atom/master/assets/xtm-atom-eg.gif)
