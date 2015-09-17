@@ -25,6 +25,7 @@ connected = false
 client = null
 statusClear = null
 message = new StatusMessage('Message')
+message.setText("")
 prompt = '<span style=\'color:rgb(206,89,97)\'>xtm>  </span>'
 #function panic() {
 #  send_string("(bind-func dsp (lambda (in:SAMPLE time:i64 channel:i64 data:SAMPLE*) 0))");
@@ -118,9 +119,6 @@ evaluate = ->
       type: 'highlight'
       class: 'highlight-region')
     setTimeout (->
-      `var decoration`
-      `var marker`
-      `var range`
       decoration.destroy()
       return
     ), 100
@@ -175,11 +173,48 @@ get_s_expression = (editor) ->
   ]
   range
 
+start_extempore = ->
+  ###term2path = atom.packages.resolvePackagePath('term2')
+  TermView = require(term2path + '/lib/TermView.coffee')
+  options =
+    runCommand: 'extempore'
+  termView = new TermView(options)###
+  #term2path = atom.packages.resolvePackagePath('term2')
+  #Term2  = require(term2path + '/index.coffee')
+  #Term2.newTerm()
+
+  ###
+  opts =
+    runCommand    : 'extempore'
+    shellOverride : atom.config.get 'term2.shellOverride'
+    shellArguments: atom.config.get 'term2.shellArguments'
+    titleTemplate : atom.config.get 'term2.titleTemplate'
+    cursorBlink   : atom.config.get 'term2.cursorBlink'
+    fontFamily    : atom.config.get 'term2.fontFamily'
+    fontSize      : atom.config.get 'term2.fontSize'
+    colors        : Term2.getColors()
+
+  termView = new TermView opts
+  termView.on 'remove', Term2.handleRemoveTerm.bind Term2
+
+  #Term2.termViews.push? termView
+
+  #termView = Term2.createTermView()
+
+  pane = atom.workspace.getActivePane()
+  item = pane.addItem termView
+  #pane.activateItem item
+  item.bind(Term2)
+  ###
+
+
+
 module.exports =
   activate: ->
     atom.commands.add 'atom-workspace', 'extempore-atom:Connect', @Connect
     atom.commands.add 'atom-workspace', 'extempore-atom:Disconnect', @Disconnect
     atom.commands.add 'atom-text-editor', 'extempore-atom:Evaluate', @Evaluate
+    #atom.commands.add 'atom-text-editor', 'extempore-atom:Start Extempore (requires term2)', @StartExtempore
     #atom.commands.add('atom-workspace', "extempore-atom:Panic", this.Panic);
     return
   Connect: ->
@@ -190,4 +225,7 @@ module.exports =
     return
   Evaluate: ->
     evaluate()
+    return
+  StartExtempore: ->
+    start_extempore()
     return
