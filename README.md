@@ -17,7 +17,7 @@ The plugin provides three commands:
 
 - `Disconnect` [alt-O or alt-x] will disconnect from the connected Extempore process.
 
-- `Evaluate` [alt-w] will evaluate either the
+- `Evaluate` [alt-s] will evaluate either the
   currently highlighted region (if applicable) or the current
   top-level expression surrounding the cursor. This is how you send code to
   the Extempore process for evaluation.
