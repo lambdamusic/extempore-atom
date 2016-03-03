@@ -153,7 +153,7 @@ get_s_expression = (editor) ->
   endRow = cursorRow
   while endRow < bufferLines.length
     line = bufferLines[endRow]
-    if !line
+    if !line?
       error 's-expr parser failed'
       return null
     left_parens += (line.match(/\(/g) or []).length
