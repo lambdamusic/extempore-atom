@@ -101,6 +101,7 @@ connect_to_host = (string) ->
   client.on 'close', ->
     disconnect()
     return
+  client.setKeepAlive(true,60000);
   return
 
 ###*
