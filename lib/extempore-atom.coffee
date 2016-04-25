@@ -154,6 +154,7 @@ get_s_expression = (editor) ->
   endRow = cursorRow
   while endRow < bufferLines.length
     line = bufferLines[endRow]
+    line = (line.match(new RegExp(/^([^"]|"[^"]*")*?(;;)/)) or [line])[0];
     left_parens += (line.match(/\(/g) or []).length
     right_parens += (line.match(/\)/g) or []).length
     if left_parens == right_parens
