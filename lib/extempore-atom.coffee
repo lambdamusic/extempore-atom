@@ -11,9 +11,7 @@
 #                       the s-expression containing the cursor
 #
 # Todo-list:
-#      @TODO: Add arguments for connect, to set port and server ip
-#      @DONE: Consider converting entire file to Coffescript (easily doable
-#             with js2.coffee) for maintanability
+#      ...
 #
 ###
 
@@ -154,14 +152,18 @@ get_s_expression = (editor) ->
   endRow = cursorRow
   while endRow < bufferLines.length
     line = bufferLines[endRow]
-    line = (line.match(new RegExp(/^([^"]|"[^"]*")*?(;;)/)) or [line])[0];
+
+    # TODO: use more robust comment and string checking
+    line = (line.match(/^([^"]|"[^"]*")*?(;)/) or [line])[0]; # ignore comments
+    line = line.replace(/"(.*?)"/,"\"\""); # ignore strings
+    
     left_parens += (line.match(/\(/g) or []).length
     right_parens += (line.match(/\)/g) or []).length
     if left_parens == right_parens
       break
     endRow++
   if endRow == bufferLines.length
-    error 's-expr parser failed'
+    error 'Unmatched bracket in expression (reached EOF)'
     return null
   range = [
     [
