@@ -4,12 +4,14 @@ An Atom package for
 [Extempore](https://github.com/digego/extempore), providing syntax highlighting, snippets and commands for working with Extempore.
 
 # Installation
-Extempore-Atom can be installed by running `apm install extempore-atom` in a terminal / command prompt.
+Extempore-Atom can be installed through the Atom settings or by running `apm install extempore-atom` in a terminal / command prompt.
 
 Installation instructions for Extempore can be found at
 [Extempore's github page](https://github.com/digego/extempore).
 
 # Working with Extempore in Atom
+
+See [Ben Swift's guide](http://benswift.me/2016/02/15/extempore-atom-cheat-sheet/) for a cheat sheet for using Atom with Extempore.
 
 The plugin provides three commands:
 
@@ -23,7 +25,7 @@ The plugin provides three commands:
   the Extempore process for evaluation.
 
 You can trigger the commands either through the menu (`Packages >
-Extempore`), or the command palette (`ctrl+shift+P`) or through the
+Extempore`), the command palette (`ctrl+shift+P`) or through the
 shortcut keys (listed above).
 
 # Preview
