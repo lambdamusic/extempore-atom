@@ -289,6 +289,13 @@
   "mplay":
     prefix: "mplay "
     body: "(mplay ${1:device} ${2:pitch} ${3:velocity} ${4:duration} ${5:channel})"
+  "midi-play-chord":
+    prefix: "mpchord "
+    body: '''
+      (for-each (lambda (p)
+      	    (mplay ${1:device} p ${2:velocity} ${3:duration} ${4:channel}))
+      	  (pc:make-chord ${5:lower} ${6:upper} ${7:number} ${8:'(0 2 4 5 7 9 11)}))
+    '''
   "nargs-test":
     prefix: "ifnargs "
     body: "(if (> nargs ${1:0}) (pref dargs $1) ${2:else-val})"
@@ -446,6 +453,28 @@
       (ipc:connect "${1:server-ip}" "${2:server-name}" ${3:server-port})
       (clock:update-metro "$2" "${4:client-name}")
     '''
+"temporal-recursion":
+  prefix: "tr "
+  body: '''
+    (define ${1:fun-name}
+      (lambda (beat dur)
+        $0
+        (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur) dur)))
+
+    ($1 (*metro* 'get-beat ${2:4}) ${3:1/4})
+  '''
+  "temporal-recursion-rotate":
+    prefix: "trr "
+    body: '''
+      (define ${1:fun-name}
+        (lambda (beat dur lst inc)
+          $0
+          (mplay iac-out (car lst) 100 dur 0)
+          (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur) dur
+            (rotate lst inc) inc)))
+
+      ($1 (*metro* 'get-beat ${2:4}) ${3:1/4} ${4:'(60)} ${5:1})
+    '''
   "temporal-recursion-timed":
     prefix: "trt "
     body: '''
@@ -468,16 +497,6 @@
           (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur) dur)))
 
       ($1 (*metro* 'get-beat 4) ${2:1/4})
-    '''
-  "temporal-recursion":
-    prefix: "tr "
-    body: '''
-      (define ${1:fun-name}
-        (lambda (beat dur)
-          $0
-          (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur) dur)))
-
-      ($1 (*metro* 'get-beat ${4:4}) ${5:1/4})
     '''
   tref:
     prefix: "tref "
