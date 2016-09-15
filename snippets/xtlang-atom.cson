@@ -288,13 +288,13 @@
     body: "(*metro* 'set-tempo ${1:120})"
   "mplay":
     prefix: "mplay "
-    body: "(mplay ${1:device} ${2:pitch} ${3:velocity} ${4:duration} ${5:channel})"
+    body: "(mplay ${1:device} ${2:pitch} ${3:vel} ${4:dur} ${5:channel})"
   "midi-play-chord":
     prefix: "mpchord "
     body: '''
       (for-each (lambda (p)
-      	    (mplay ${1:device} p ${2:velocity} ${3:duration} ${4:channel}))
-      	  (pc:make-chord ${5:lower} ${6:upper} ${7:number} ${8:'(0 2 4 5 7 9 11)}))
+      	    (mplay ${1:device} p ${2:vel} ${3:dur} ${4:channel}))
+      	  (pc:make-chord ${5:lower} ${6:upper} ${7:voices} ${8:'(0 2 4 5 7 9 11)}))
     '''
   "nargs-test":
     prefix: "ifnargs "
