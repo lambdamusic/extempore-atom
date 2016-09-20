@@ -228,7 +228,10 @@
     body: "(if (${1:=} (modulo (/ time SR) ${2:1.0}) ${3:0.0}) $0)"
   "if-mod":
     prefix: "im "
-    body: "(if (${1:=} (modulo beat ${2:1}) ${3:0}) $0)"
+    body: "(if (${1:=} (modulo ${2:beat} ${3:1}) ${4:0}) $0)"
+"if-mod-duration":
+  prefix: "imd "
+  body: "(if (${1:=} (modulo (+ ${2:beat} dur) ${3:1}) ${4:0}) ${5:whenTrue} ${6:whenFalse})"
   "if-not-null":
     prefix: "inn "
     body: "(if (not (null? $1))$0)"
@@ -286,9 +289,12 @@
   "metro-set-tempo":
     prefix: "mst "
     body: "(${1:*metro*}'set-tempo ${2:120})"
+  "metplay":
+    prefix: "metplay "
+    body: "(metplay ${1:metro} ${2:device} ${3:pitch} ${4:vel} ${5:dur} ${6:ch})"
   "mplay":
     prefix: "mplay "
-    body: "(mplay ${1:device} ${2:pitch} ${3:vel} ${4:dur} ${5:channel})"
+    body: "(mplay ${1:device} ${2:pitch} ${3:vel} ${4:dur} ${5:0})"
   "midi-play-chord":
     prefix: "mpchord "
     body: '''
@@ -478,18 +484,35 @@
 
       ($1 (*metro* 'get-beat ${2:4}) ${3:1/4} ${4:'(60)} ${5:1})
     '''
+
+"temporal-recursion-metro-with-note-attributes":
+  prefix: "trmn "
+  body: '''
+    (define ${1:fun-name}
+      (lambda (metro beat pitch vel dur ch)
+        $0
+        (callback (metro (+ beat (* .5 dur))) '$1 metro (+ beat dur)
+          pitch
+          vel
+          dur
+          ch)))
+
+    ($1 ${2:metro} (${2:metro} 'get-beat ${3:4}) ${4:60} ${5:80} ${6:1/4} ${7:0})
+  '''
+
   "temporal-recursion-note-attributes":
     prefix: "trn "
     body: '''
       (define ${1:fun-name}
-        (lambda (beat pitch vel dur)
+        (lambda (beat pitch vel dur ch)
           $0
           (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur)
             pitch
             vel
-            dur)))
+            dur
+            ch)))
 
-      ($1 (*metro* 'get-beat ${2:4}) ${3:60} ${4:80} ${5:1/4})
+      ($1 (*metro* 'get-beat ${2:4}) ${3:60} ${4:80} ${5:1/4} ${6:0})
     '''
   "temporal-recursion-timed":
     prefix: "trt "
