@@ -294,13 +294,13 @@
     body: "(metplay ${1:metro} ${2:device} ${3:pitch} ${4:vel} ${5:dur} ${6:ch})"
   "mplay":
     prefix: "mplay "
-    body: "(mplay ${1:device} ${2:pitch} ${3:vel} ${4:dur} ${5:0})"
+    body: "(mplay ${1:device} ${2:pitch} ${3:vel} ${4:dur} ${5:ch})"
   "midi-play-chord":
     prefix: "mpchord "
     body: '''
       (for-each (lambda (p)
-      	    (mplay ${1:device} p ${2:vel} ${3:dur} ${4:channel}))
-      	  (pc:make-chord ${5:lower} ${6:upper} ${7:voices} ${8:'(0 2 4 5 7 9 11)}))
+      	    (mplay ${1:device} p ${2:vel} ${3:dur} ${4:ch}))
+      	  (pc:make-chord ${5:lower} ${6:upper} ${7:voices} ${8:'(0 2 5 7 9)}))
     '''
   "nargs-test":
     prefix: "ifnargs "
@@ -392,6 +392,9 @@
   play:
     prefix: "play "
     body: "(play ${1:inst} ${2:60} ${3:80} ${4:dur})"
+  "pm-send":
+    prefix: "pms"
+    body: "(pm_send ${1:device} ${2:*midi-cc*} ${3:ch} ${4:a} ${5:b})"
   pref:
     prefix: "pref "
     body: "(pref$1 ${2:dat} ${3:index})"
@@ -478,13 +481,26 @@
       (define ${1:fun-name}
         (lambda (beat dur lst inc)
           $0
-          (mplay ${6:device} (car lst) 100 dur 0)
+          (mplay ${6:device} (car lst) 50 dur ${7:0})
           (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur) dur
             (rotate lst inc) inc)))
 
-      ($1 (*metro* 'get-beat ${2:4}) ${3:1/4} ${4:'(60)} ${5:1})
+      ($1 (*metro* 'get-beat ${2:4}) ${3:1/4} ${4:'(60)} ${5:-1})
     '''
+"temporal-recursion-rotate-velocity":
+  prefix: "trrv "
+  body: '''
+    (define ${1:fun-name}
+      (lambda (beat dur lst inc vel)
+        $0
+        (mplay ${7:device} (car lst) (cosr vel 10 1) dur ${8:0})
+        (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur) dur
+          (rotate lst inc)
+          inc
+          vel)))
 
+    ($1 (*metro* 'get-beat ${2:4}) ${3:1/4} ${4:'(60)} ${5:-1} ${6:20})
+    '''
 "temporal-recursion-metro-with-note-attributes":
   prefix: "trmn "
   body: '''
