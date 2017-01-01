@@ -3,6 +3,6 @@
     "alt-o": "extempore-atom:Connect",
     "alt-O": "extempore-atom:Disconnect",
     "alt-x": "extempore-atom:Disconnect",
-    "alt-s": "extempore-atom:Evaluate"
+    "alt-space": "extempore-atom:Evaluate"
   }
 }
