@@ -1,0 +1,8 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	dotimes:
+		prefix: "dotimes"
+		body: '''
+			(dotimes (${1:i} ${2:limit})
+			  $0)$0
+		'''

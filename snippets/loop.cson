@@ -1,0 +1,13 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"temporal-recursion":
+		prefix: "loop"
+		body: '''
+			(define ${1:loop}
+			   (lambda (beat)
+			      (let ((dur ${2:1/16}))
+			          $3
+			     (callback (*metro* (+ beat (* 1/2 dur))) '${1} (+ beat dur)))))
+
+			(${1} (*metro* 'get-beat 1))$0
+		'''

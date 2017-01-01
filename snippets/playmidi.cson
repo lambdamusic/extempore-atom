@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	mplay:
+		prefix: "mplay"
+		body: "(mplay ${1:mididevice} ${2:pitch} ${3:90} ${4:1} ${5:0})$0"

@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	load:
+		prefix: "load"
+		body: "(sys:load \"libs/$0.xtm\")$0"

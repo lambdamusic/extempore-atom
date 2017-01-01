@@ -1,0 +1,14 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"temporal-recursion-rotate":
+		prefix: "looprt"
+		body: '''
+			(define ${1:kit}
+			   (lambda (beat notes durs)
+			      (let ((dur (car durs)) (note (car notes)))
+			          ${2:(mplay mididevice note 40 dur 0)}
+			     (callback (*metro* (+ beat (* 1/2 dur))) '${1} (+ beat dur)
+			               (rotate notes -1) (rotate durs -1)))))
+
+			(${1} (*metro* 'get-beat 1) '(${3:60 67 69}) '(${4:1 2 3}))$0
+		'''

@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	cosrfloor:
+		prefix: "cosrfloor"
+		body: "(cosrfloor ${1:cen} ${2:amp} ${3:freq})$0"

@@ -1,0 +1,11 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"named-let-simple":
+		prefix: "letn"
+		body: '''
+			(let llop ((i 0) (n '(1/2)))
+				(if (< i 6)
+			        (llop (+ i 1) (append n (list (+ (cl:last n) (oneof 1/2 1 2)))))
+			        n)
+			     ${1|;; do something with llop..|}$0
+		'''

@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	callback:
+		prefix: "callback"
+		body: "(callback (*metro* (+ beat (* 1/2 ${1:dur}))) '${2:loop} (+ beat $1) $3)$0"

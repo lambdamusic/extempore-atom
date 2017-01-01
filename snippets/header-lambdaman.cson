@@ -1,0 +1,19 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"file-header":
+		prefix: "header"
+		body: '''
+			;;; `(buffer-name)` -- $1
+
+			;; Author: ${2:@lambdaman}
+			;; Keywords: extempore
+			;; Required dylibs: $3
+
+			;;; Commentary:
+
+			;; $4
+
+			;;; Code:
+
+			$0
+		'''

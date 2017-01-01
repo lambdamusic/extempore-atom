@@ -1,0 +1,15 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"Melody list maker":
+		prefix: "melody"
+		body: '''
+			(define melody (let loop ((i 0)
+			                          (lst '(60)))
+			                  (if (< i 24)
+			                      (loop (+ i 1)
+			                            (cons (pc:relative (car lst)
+			                                               (random '(-1 1))
+			                                               '(0 2 4 5 7 9 11))
+			                                  lst))
+			                      (cdr (reverse lst)))))$0
+		'''

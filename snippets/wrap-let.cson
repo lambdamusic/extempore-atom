@@ -1,0 +1,7 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"Wrap with let":
+		body: '''
+			(let (($0))
+					$SELECTION)$0
+		'''

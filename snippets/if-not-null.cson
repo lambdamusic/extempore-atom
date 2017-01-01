@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"if-not-null":
+		prefix: "ifnotn"
+		body: "(if (not (null? $1))$0)$0"

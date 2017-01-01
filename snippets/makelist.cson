@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"make-list-with-proc":
+		prefix: "makel"
+		body: "make-list-with-proc ${1:length} (lambda (x) ${2:(random 10)} ))$0"

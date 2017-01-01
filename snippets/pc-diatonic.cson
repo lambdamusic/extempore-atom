@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"pc-diatonic":
+		prefix: "pcdia"
+		body: "(pc:diatonic ${1:root} '${2:^-} '${3:degree})$0"

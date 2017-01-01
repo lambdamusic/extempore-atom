@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"mu:testchord-midi":
+		prefix: "mutest-chord-midi"
+		body: "(mu:testchord-midi ${1:mididevice} ${2:'(60 64 67)})$0"

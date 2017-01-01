@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"play-note":
+		prefix: "playnote"
+		body: "(play-note (now) ${1:inst} ${2:60} ${3:80} ${4:44100})$0"

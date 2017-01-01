@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"pc-random":
+		prefix: "pcrand"
+		body: "(pc:random ${1:lower} ${2:upper} ${3:pcscale}$0)$0"

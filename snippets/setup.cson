@@ -1,0 +1,9 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"setup-common-libs":
+		prefix: "setup"
+		body: '''
+			(sys:load "${1:/Users/michele.pasin/Dropbox/code/extempore/my-utils/_start_.xtm}")  ;;my utils
+			(sys:load "${2:libs/core/instruments.xtm}")  ;;soft synths
+			(sys:load "libs/external/instruments_ext.xtm")  ;;sampler$0
+		'''

@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"pc:make-chord-fixed":
+		prefix: "pcmakechfx"
+		body: "(pc:make-chord-fixed ${1:pitch} ${2:number} ${3:pcchord}$0)$0"

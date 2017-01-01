@@ -1,0 +1,10 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"cond-with-modulo-2":
+		prefix: "condm"
+		body: '''
+			(cond ((= (modulo beat 4) 0)
+			             play)
+			            ((= (modulo beat 4) 1)
+			             play))$0
+		'''

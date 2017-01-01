@@ -1,0 +1,14 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"named-let-pcrelative":
+		prefix: "letn"
+		body: '''
+			(let loop ((i 0)
+			           (lst '(60)))
+			      (if (< i 24)
+			          (loop (+ i 1)
+			                (cons (pc:relative (car lst) (random '(-1 1))                                          				'(0 2 4 5 7 9 11))
+			                      lst))
+					  lst)
+				  ${1|;; do something with lst now..|}$0
+		'''

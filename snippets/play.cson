@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	play:
+		prefix: "play"
+		body: "(play ${1:inst} ${2:60} ${3:90} ${4:1})$0"

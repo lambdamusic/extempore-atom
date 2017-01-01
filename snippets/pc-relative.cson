@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"pc:relative":
+		prefix: "pcrel"
+		body: "(pc:relative ${1:pitch} ${2:step} pcscale$0)$0"

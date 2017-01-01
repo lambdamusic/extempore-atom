@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"if-alternating":
+		prefix: "ifalt"
+		body: "(if (= ${1:var} ${2:a}) ${3:b} $2)$0"

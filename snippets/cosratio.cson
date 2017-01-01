@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	cosratio:
+		prefix: "cosratio"
+		body: "(cosratio ${1:cen} ${2:amp} ${3:freq})$0"

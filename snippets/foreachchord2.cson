@@ -1,0 +1,10 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"for-each-chord-arp":
+		prefix: "foreachca"
+		body: '''
+			(for-each (lambda (p t)
+			             (play t ${1:sampler} p ${2:80} ${3:dur}))
+			           ${4:'(60  64 67)}
+			           ${5:'(0 1/4 1/2)})$0
+		'''

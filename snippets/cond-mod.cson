@@ -1,0 +1,8 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"cond-mod":
+		prefix: "condm"
+		body: '''
+			(cond ((< (modulo beat ${1:1}) ${2:0})$0)
+			      (else ${3:0}))$0
+		'''

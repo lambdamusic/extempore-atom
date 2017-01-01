@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"metro-set-tempo":
+		prefix: "mst"
+		body: "(*metro* 'set-tempo ${1:120})$0"

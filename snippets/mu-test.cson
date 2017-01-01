@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"mu:test":
+		prefix: "mutest"
+		body: "(mu:test ${1:instrument} ${2:pitch})$0"

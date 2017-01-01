@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"if-null-set":
+		prefix: "ifnull"
+		body: "(if (null? ${1:x}) (set! $1 $0))$0"

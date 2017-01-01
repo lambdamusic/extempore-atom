@@ -1,0 +1,35 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"Scheme recursion example":
+		prefix: "recursion"
+		body: '''
+			;;;;;;;;;;
+			;; recursion
+			;;;;;;;;;;
+
+
+			(define count-leaves
+			   (lambda (tree)
+			  (if (atom? tree)
+			      1
+			    (+ (count-leaves (car tree))
+			       (or (if (cdr tree) (count-leaves (cdr tree)))
+				   1)))))
+
+			;; eg (count-leaves '((a b (c d)) (e) f))
+
+
+
+			;;;;;;;;;;;;;;;;;;;;;;;
+			;; example #2
+			(define remove-all
+			   (lambda (obj lst)
+			      (cond ((null? lst)
+			             '())
+			            ((list? (car lst))
+			             (cons (remove-all obj (car lst))
+			                   (remove-all obj (cdr lst))))
+			            ((equal? obj (car lst))
+			             (remove-all obj (cdr lst)))
+			            (else (cons (car lst) (remove-all obj (cdr lst)))))))$0
+		'''

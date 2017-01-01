@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"random-range":
+		prefix: "random"
+		body: "(random ${1:60} ${2:90})$0"

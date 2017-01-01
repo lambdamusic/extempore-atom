@@ -1,0 +1,8 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"If random":
+		prefix: "ifrandom"
+		body: '''
+			(if (< (random) ${1:prob})
+			    $0)$0
+		'''

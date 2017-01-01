@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"pc:chord-options":
+		prefix: "pcopt"
+		body: "(pc:chord-options ${1:root} '${2:^} ${3:pc}$0)$0"

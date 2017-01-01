@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"mu:scale":
+		prefix: "muscale"
+		body: "(mu:scale ${1:pitch} '${2:pentatonic|wholetone|chromatic|octatonic|messiaen1|messiaen2|messiaen3|messiaen4|messiaen5|messiaen6|messiaen7|ionian|dorian|phrygian|lydian|lydian-dominant|lydian-mixolydian|mixolydian|aeolian|locrian)})$0"

@@ -1,0 +1,9 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	define:
+		prefix: "df"
+		body: '''
+			(define ${1:func-name}
+			  (lambda ($2)
+			    $0))$0
+		'''

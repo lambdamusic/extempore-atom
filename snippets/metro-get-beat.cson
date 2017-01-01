@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"metro-get-beat":
+		prefix: "mgb"
+		body: "(*metro* 'get-beat ${1:4})$0"

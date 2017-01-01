@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	let:
+		prefix: "let"
+		body: "(let (($0)))$0"

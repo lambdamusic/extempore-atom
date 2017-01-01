@@ -1,0 +1,7 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"Wrap with onbeat":
+		body: '''
+			(onbeat ${1:4} ${2:0}
+					$SELECTION)$0
+		'''

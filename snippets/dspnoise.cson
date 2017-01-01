@@ -1,0 +1,10 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"dsp noise":
+		prefix: "dsp"
+		body: '''
+			(bind-func dsp:[SAMPLE,SAMPLE,i64,i64,SAMPLE*]*
+			  (lambda (in time chan dat)
+			    (random .2)))
+			(dsp:set! dsp)$0
+		'''

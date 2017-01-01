@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	inc:
+		prefix: "inc"
+		body: "(set! ${1:var} (${2:+} $1 $0))$0"

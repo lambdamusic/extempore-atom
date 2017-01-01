@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"random-list":
+		prefix: "random"
+		body: "(random '($0))$0"

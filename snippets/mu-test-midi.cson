@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"mu:test-midi":
+		prefix: "mutestmidi"
+		body: "(mu:test-midi ${1:mididevice} ${2:pitch})$0"

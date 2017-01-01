@@ -1,0 +1,16 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"temporal-recursion-durs":
+		prefix: "loop"
+		body: '''
+			(define *durs* '(1))
+
+			(define ${1:loop}
+			   (lambda (beat durs)
+			      (let ((dur (car durs)))
+			          $3
+			     (callback (*metro* (+ beat (* 1/2 dur))) '${1} (+ beat dur)
+			      (if-cdr-notnull durs *durs*)))))
+
+			(${1} (*metro* 'get-beat 1) *durs*)$0
+		'''

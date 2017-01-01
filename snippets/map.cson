@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	map:
+		prefix: "map"
+		body: "(map (lambda (${1:x}) (println $0$1)) ${2:'(1 2 3)})$0"

@@ -1,0 +1,29 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"example-defstruct":
+		prefix: "defstruct"
+		body: '''
+			;;;;;;;;;;
+			;; defstruct
+			;;;;;;;;;;
+
+			(defstruct tree height girth age leaf-shape leaf-color)
+
+			(define coconut
+			  (make-tree 'height 30
+			             'leaf-shape 'frond
+			             'age 5))
+
+
+			(tree.height coconut) ;; =>  30
+			(tree.leaf-shape coconut) ;;=>  frond
+			(tree.girth coconut) ;;=>  <undefined>
+
+
+			(set!tree.height coconut 40)
+			(set!tree.girth coconut 10)
+
+
+			(tree.height coconut) ;;=>  40
+			(tree.girth coconut) ;;=>  10$0
+		'''

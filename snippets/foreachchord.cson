@@ -1,0 +1,9 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"for-each-chord":
+		prefix: "foreachc"
+		body: '''
+			(for-each (lambda (p)
+			           (play ${1:sampler} p ${2:vol} ${3:dur}))
+			        (pc:make-chord ${4:min} ${5:max} ${6:n} ${7:'(0 4 7)}))$0
+		'''

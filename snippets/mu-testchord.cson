@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	"mu:testchord":
+		prefix: "mutest-chord"
+		body: "(mu:testchord ${1:instrument} ${2:'(60 64 67)})$0"
