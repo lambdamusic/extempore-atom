@@ -3,6 +3,8 @@
 An Atom package for
 [Extempore](https://github.com/digego/extempore), providing syntax highlighting, snippets and commands for working with Extempore.
 
+> Version modified by @lambdaman 
+
 # Installation
 Extempore-Atom can be installed through the Atom settings or by running `apm install extempore-atom` in a terminal / command prompt.
 
