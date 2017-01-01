@@ -156,7 +156,7 @@ get_s_expression = (editor) ->
     # TODO: use more robust comment and string checking
     line = (line.match(/^([^"]|"[^"]*")*?(;)/) or [line])[0]; # ignore comments
     line = line.replace(/"(.*?)"/,"\"\""); # ignore strings
-    
+
     left_parens += (line.match(/\(/g) or []).length
     right_parens += (line.match(/\)/g) or []).length
     if left_parens == right_parens

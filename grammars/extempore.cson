@@ -16,7 +16,7 @@ patterns: [
         name: "storage.type.function-type.extempore"
       "3":
         name: "entity.name.function.extempore"
-    match: "\\((define|bind-func)(\\s+)((\\w|\\-|\\!|\\?)+)"
+    match: "\\((define|bind-func)(\\s+)((\\w|\\-|\\!|\\?|\\*)+)"
     name: "meta.function.extempore"
   }
   {
@@ -62,7 +62,7 @@ patterns: [
     name: "support.type.extempore"
   }
   {
-    match: "\\b(case|do|dotimes|let|letrec|if|else|and|or|not|equal)\\b"
+    match: "\\b(case|do|dotimes|let|letrec|if|else|and|or|not|equal|onbeat?)\\b"
     name: "keyword.control.extempore"
   }
   {
@@ -78,7 +78,11 @@ patterns: [
     name: "constant.language.extempore"
   }
   {
-    match: "\\b(cons|car|cdr|cadr|caddr|cadddr|cond|lambda|quote|eval|append|list|vector|member|load|begin|map|apply|for-each|println|printf|print|rmatch|rsplit|rreplace|cosd|tand|sind|coshd|tanhd|sinhd|acosd|asind|atand|atan2d|ceild|floord|expd|fmodd|powd|logd|log2d|log10d|sqrtd|fabsd|clearerr|ctermid|fclose|fdopen|feof|ferror|fflush|fgetc|fgets|fileno|flockfile|fopen|fputc|fputs|fread|freopen|fseek|ftell|ftrylockfile|funlockfile|fwrite|getc|getchar|getc_unlocked|getchar_unlocked|gets|getw|pclose|perror|popen|putc|putchar|putc_unlocked|putchar_unlocked|puts|putw|remove|rename|rewind|setbuf|setvbuf|tempnam|tmpfile|tmpnam|ungetc|atof|atoi|atol|memccpy|memchr|memcmp|memcpy|memmove|memset|strcat|strchr|strcmp|strcoll|strcpy|strcspn|strdup|strerror|strlen|strncat|strncmp|strncpy|strpbrk|strrchr|strspn|strstr|strtok|strtok_r|strxfrm|base64_encode|base64_decode|cname_encode|cname_decode|swap64f|unswap64f|swap32f|unswap32f|swap64i|unswap64i|swap32i|unswap32i|thread_fork|thread_fork|thread_join|thread_kill|thread_self|thread_sleep|mutex_create|mutex_destroy|mutex_lock|mutex_unlock|mutex_trylock|callback|modulo|random |play-midi-note|mplay|inexact->exact|pm_send|min |max |cosr)\\b"
+    match: "\\b(cons|car|cdr|cadr|caddr|cadddr|cond|lambda|quote|eval|append|list|vector|member|load|begin|map|apply|for-each|println|printf|print|rmatch|rsplit|rreplace|cosd|tand|sind|coshd|tanhd|sinhd|acosd|asind|atand|atan2d|ceild|floord|expd|fmodd|powd|logd|log2d|log10d|sqrtd|fabsd|clearerr|ctermid|fclose|fdopen|feof|ferror|fflush|fgetc|fgets|fileno|flockfile|fopen|fputc|fputs|fread|freopen|fseek|ftell|ftrylockfile|funlockfile|fwrite|getc|getchar|getc_unlocked|getchar_unlocked|gets|getw|pclose|perror|popen|putc|putchar|putc_unlocked|putchar_unlocked|puts|putw|remove|rename|rewind|setbuf|setvbuf|tempnam|tmpfile|tmpnam|ungetc|atof|atoi|atol|memccpy|memchr|memcmp|memcpy|memmove|memset|strcat|strchr|strcmp|strcoll|strcpy|strcspn|strdup|strerror|strlen|strncat|strncmp|strncpy|strpbrk|strrchr|strspn|strstr|strtok|strtok_r|strxfrm|base64_encode|base64_decode|cname_encode|cname_decode|swap64f|unswap64f|swap32f|unswap32f|swap64i|unswap64i|swap32i|unswap32i|thread_fork|thread_fork|thread_join|thread_kill|thread_self|thread_sleep|mutex_create|mutex_destroy|mutex_lock|mutex_unlock|mutex_trylock|callback|modulo|random |play-note|playobs |playob|play|play-midi-note|mplayobs|mplayob|mplay|inexact->exact|pm_send|min |max |cosr|define-macro|macro)\\b"
+    name: "support.function.extempore"
+  }
+  {
+    match: "\\b(pc:chord|pc:make-chord|pc:chord-options|pc:diatonic|pc:relative|pc:random|pc:quantize|pc:scale|beatis|onbeat|beat-gt|beat-lt|ifbeat-gt|ifbeat-lt|ifbeat-btw||beat-btw|ifbeat|mu:test-midi|mu:testchord-midi|mu:testchord|mu:test|mu:chord|mu:scale|if-cdr-notnull)\\b"
     name: "support.function.extempore"
   }
   {

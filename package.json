@@ -1,5 +1,5 @@
 {
-  "name": "Extempore-Atom",
+  "name": "Extempore-Atom-Modified",
   "main": "./lib/extempore-atom",
   "version": "0.3.2",
   "description": "A package to work with the Extempore live-coding environment",
