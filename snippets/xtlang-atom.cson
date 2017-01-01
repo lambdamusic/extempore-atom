@@ -229,9 +229,9 @@
   "if-mod":
     prefix: "im "
     body: "(if (${1:=} (modulo ${2:beat} ${3:1}) ${4:0}) $0)"
-"if-mod-duration":
-  prefix: "imd "
-  body: "(if (${1:=} (modulo (+ ${2:beat} dur) ${3:1}) ${4:0}) ${5:whenTrue} ${6:whenFalse})"
+  "if-mod-duration":
+    prefix: "imd "
+    body: "(if (${1:=} (modulo (+ ${2:beat} dur) ${3:1}) ${4:0}) ${5:whenTrue} ${6:whenFalse})"
   "if-not-null":
     prefix: "inn "
     body: "(if (not (null? $1))$0)"
@@ -462,16 +462,16 @@
       (ipc:connect "${1:server-ip}" "${2:server-name}" ${3:server-port})
       (clock:update-metro "$2" "${4:client-name}")
     '''
-"temporal-recursion":
-  prefix: "tr "
-  body: '''
-    (define ${1:fun-name}
-      (lambda (beat dur)
-        $0
-        (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur) dur)))
+  "temporal-recursion":
+    prefix: "tr "
+    body: '''
+      (define ${1:fun-name}
+        (lambda (beat dur)
+          $0
+          (callback (*metro* (+ beat (* .5 dur))) '$1 (+ beat dur) dur)))
 
-    ($1 (*metro* 'get-beat ${2:4}) ${3:1/4})
-  '''
+      ($1 (*metro* 'get-beat ${2:4}) ${3:1/4})
+    '''
   "temporal-recursion-rotate":
     prefix: "trr "
     body: '''
@@ -485,20 +485,20 @@
       ($1 (*metro* 'get-beat ${2:4}) ${3:1/4} ${4:'(60)} ${5:1})
     '''
 
-"temporal-recursion-metro-with-note-attributes":
-  prefix: "trmn "
-  body: '''
-    (define ${1:fun-name}
-      (lambda (metro beat pitch vel dur ch)
-        $0
-        (callback (metro (+ beat (* .5 dur))) '$1 metro (+ beat dur)
-          pitch
-          vel
-          dur
-          ch)))
+  "temporal-recursion-metro-with-note-attributes":
+    prefix: "trmn "
+    body: '''
+      (define ${1:fun-name}
+        (lambda (metro beat pitch vel dur ch)
+          $0
+          (callback (metro (+ beat (* .5 dur))) '$1 metro (+ beat dur)
+            pitch
+            vel
+            dur
+            ch)))
 
-    ($1 ${2:metro} (${2:metro} 'get-beat ${3:4}) ${4:60} ${5:80} ${6:1/4} ${7:0})
-  '''
+      ($1 ${2:metro} (${2:metro} 'get-beat ${3:4}) ${4:60} ${5:80} ${6:1/4} ${7:0})
+    '''
 
   "temporal-recursion-note-attributes":
     prefix: "trn "
