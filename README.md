@@ -3,7 +3,14 @@
 An Atom package for
 [Extempore](https://github.com/digego/extempore), providing syntax highlighting, snippets and commands for working with Extempore.
 
-> Version modified by @lambdaman 
+
+# Notes about this fork
+
+I forked this project from [noahingham](https://github.com/noahingham/extempore-atom) and made a whole bunch of changes based on my livecoding preferences (e.g. see [snippets](https://github.com/lambdamusic/extempore-atom/tree/master/snippets) and [grammars](https://github.com/lambdamusic/extempore-atom/tree/master/grammars)). Not sure it'll be of use to anybody else, but feel free to have a look around.
+
+If you're just starting out with Extempore it's probably better to use [noahingham](https://github.com/noahingham/extempore-atom) original atom-extempore release of the plugin. 
+
+Have fun!
 
 # Installation
 Extempore-Atom can be installed through the Atom settings or by running `apm install extempore-atom` in a terminal / command prompt.
