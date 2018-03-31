@@ -1,13 +1,13 @@
 {
-  "name": "Extempore-Atom-Modified",
+  "name": "extempore-atom-lambda",
   "main": "./lib/extempore-atom",
-  "version": "0.3.2",
-  "description": "A package to work with the Extempore live-coding environment (lambdaman edit)",
+  "version": "0.3.2.1",
+  "description": "A package to work with the Extempore live-coding environment (modified by lambdaman)",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "extempore-atom:Connect"
   },
-  "repository": "https://github.com/noahingham/extempore-atom",
+  "repository": "https://github.com/lambdamusic/extempore-atom-lambda",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
