@@ -1,0 +1,5 @@
+# March 31, 2018
+".source.extempore":
+	mplayp:
+		prefix: "mplayp"
+		body: "(mplayp ${1:1} ${2:synth} ${3:(list 60)} ${4:90} ${5:1/4} ${6:0})"
