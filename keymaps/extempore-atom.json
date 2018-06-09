@@ -5,6 +5,7 @@
     "alt-x": "extempore-atom:Disconnect",
     "alt-e": "extempore-atom:Evaluate",
     "cmd-e": "extempore-atom:Evaluate",
-    "ctrl-space": "extempore-atom:Evaluate"
+    "ctrl-space": "extempore-atom:Evaluate",
+    "alt-i": "extempore-atom:Wrapbeat"
   }
 }

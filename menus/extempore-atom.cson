@@ -23,6 +23,10 @@
         {
           'label': 'Evaluate'
           'command': 'extempore-atom:Evaluate'
+        },
+        {
+          'label': 'Wrap with beat?'
+          'command': 'extempore-atom:Wrapbeat'
         }
       ]
     ]

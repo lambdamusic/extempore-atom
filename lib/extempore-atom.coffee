@@ -217,7 +217,7 @@ start_extempore = ->
 
 # mikele June 9, 2018
 # does not seem to work!
-wrap_with_on_beat = ->
+wrapbeat = ->
   # inspired from
   # https://discuss.atom.io/t/snippets-get-the-selection/16156/8
   # Make sure we are in an Editor window
@@ -236,6 +236,7 @@ wrap_with_on_beat = ->
 
   # insertText() replaces the whole selection. The options argument makes sure that the resulting text is selected.
   selection.insertText(prefix + selection.getText() + suffix, {select: true})
+  return
 
 
 
@@ -245,6 +246,7 @@ module.exports =
     atom.commands.add 'atom-workspace', 'extempore-atom:Connect', @Connect
     atom.commands.add 'atom-workspace', 'extempore-atom:Disconnect', @Disconnect
     atom.commands.add 'atom-text-editor', 'extempore-atom:Evaluate', @Evaluate
+    atom.commands.add 'atom-text-editor', 'extempore-atom:Wrapbeat', @Wrapbeat
     #atom.commands.add 'atom-text-editor', 'extempore-atom:Start Extempore (requires term2)', @StartExtempore
     #atom.commands.add('atom-workspace', "extempore-atom:Panic", this.Panic);
     return
@@ -257,9 +259,9 @@ module.exports =
   Evaluate: ->
     evaluate()
     return
-  # Wrap_with_on_beat: ->
-  #   wrap_with_on_beat()
-  #   return
+  Wrapbeat: ->
+    wrapbeat()
+    return
   StartExtempore: ->
     start_extempore()
     return
