@@ -3,7 +3,5 @@
 	define:
 		prefix: "define"
 		body: '''
-			(define ${1:func-name}
-			  (lambda ($2)
-			    $0))$0
+			(define ${1:variable} ${2:val})
 		'''
