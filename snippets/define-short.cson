@@ -1,7 +1,7 @@
 # Generated with Atomizr – https://atom.io/packages/atomizr
 ".source.extempore":
-	define:
-		prefix: "define"
+	"define-short":
+		prefix: "define-short"
 		body: '''
 			(define ${1:variable} ${2:val})
 		'''

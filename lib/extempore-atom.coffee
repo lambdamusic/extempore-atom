@@ -213,6 +213,33 @@ start_extempore = ->
 
 
 
+
+
+# mikele June 9, 2018
+# does not seem to work!
+wrap_with_on_beat = ->
+  # inspired from
+  # https://discuss.atom.io/t/snippets-get-the-selection/16156/8
+  # Make sure we are in an Editor window
+  editor = atom.workspace.getActiveTextEditor()
+  # If there is currently selected text then send it
+  selection = editor.getLastSelection() # Get the most recent selection.
+  text = selection.getText() # A selection is an object with a bunch of information attached, so we need to get the text from it.
+  prefix = "(onbeat 4 0"
+  suffix = ")"
+
+  # This block makes sure that there are spaces between the prefix, suffix, and content. In the case of the example tag, this is necessary.
+  if text[0] != " "
+    prefix = prefix + " "
+  if text[text.length - 1] != " "
+    suffix = " " + suffix
+
+  # insertText() replaces the whole selection. The options argument makes sure that the resulting text is selected.
+  selection.insertText(prefix + selection.getText() + suffix, {select: true})
+
+
+
+
 module.exports =
   activate: ->
     atom.commands.add 'atom-workspace', 'extempore-atom:Connect', @Connect
@@ -230,6 +257,9 @@ module.exports =
   Evaluate: ->
     evaluate()
     return
+  # Wrap_with_on_beat: ->
+  #   wrap_with_on_beat()
+  #   return
   StartExtempore: ->
     start_extempore()
     return

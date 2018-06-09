@@ -1,0 +1,4 @@
+".source.extempore":
+	"interval-seventhmaj":
+		prefix: "seventhmaj"
+		body: "(seventhmaj ${1:atom_or_list})"

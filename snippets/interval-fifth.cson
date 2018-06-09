@@ -1,0 +1,5 @@
+# 
+".source.extempore":
+	"interval-fifth":
+		prefix: "fifth"
+		body: "(fifth ${1:atom_or_list})"

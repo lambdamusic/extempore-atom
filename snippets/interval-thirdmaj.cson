@@ -1,0 +1,5 @@
+#
+".source.extempore":
+	"interval-thirdmaj":
+		prefix: "thirdmaj"
+		body: "(thirdmaj ${1:atom_or_list})"

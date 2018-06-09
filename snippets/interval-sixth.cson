@@ -1,0 +1,5 @@
+#
+".source.extempore":
+	"interval-sixth":
+		prefix: "sixth"
+		body: "(sixth ${1:atom_or_list})"

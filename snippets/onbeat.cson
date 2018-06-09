@@ -1,5 +1,5 @@
 # Generated with Atomizr – https://atom.io/packages/atomizr
 ".source.extempore":
-	"onbeat?":
+	"onbeat":
 		prefix: "onbeat"
-		body: "(onbeat ${1:4} ${2:0} $SELECTION)$0"
+		body: "(onbeat ${1:4} ${2:0} ${3:function})"

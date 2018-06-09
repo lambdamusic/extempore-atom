@@ -1,0 +1,5 @@
+#
+".source.extempore":
+	"interval-thirdmin":
+		prefix: "thirdmin"
+		body: "(thirdmin ${1:atom_or_list})"

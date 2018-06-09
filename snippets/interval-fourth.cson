@@ -1,0 +1,4 @@
+".source.extempore":
+	"interval-fourth":
+		prefix: "fourth"
+		body: "(fourth ${1:atom_or_list})"

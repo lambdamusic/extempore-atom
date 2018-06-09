@@ -1,0 +1,4 @@
+".source.extempore":
+	"interval-octave":
+		prefix: "octave"
+		body: "(octave ${1:atom_or_list})"

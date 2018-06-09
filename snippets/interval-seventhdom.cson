@@ -1,0 +1,5 @@
+#
+".source.extempore":
+	"interval-seventhdom":
+		prefix: "seventhdom"
+		body: "(seventhdom ${1:atom_or_list})"
