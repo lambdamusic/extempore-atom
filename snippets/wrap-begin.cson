@@ -1,7 +1,0 @@
-# does not work in ATOM
-".source.extempore":
-	"Wrap with begin":
-		body: '''
-			(begin
-					$SELECTION)$0
-		'''

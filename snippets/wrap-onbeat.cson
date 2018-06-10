@@ -1,7 +1,0 @@
-# does not work in ATOM
-".source.extempore":
-	"Wrap with onbeat":
-		body: '''
-			(onbeat ${1:4} ${2:0}
-					$SELECTION)$0
-		'''

@@ -1,7 +1,0 @@
-# does not work in ATOM
-".source.extempore":
-	"Wrap with dotimes":
-		body: '''
-			(dotimes (${1:i} ${2:limit})
-					$SELECTION)$0
-		'''

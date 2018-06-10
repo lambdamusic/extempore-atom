@@ -1,7 +1,0 @@
-# does not work in ATOM
-".source.extempore":
-	"Wrap with let":
-		body: '''
-			(let (($0))
-					$SELECTION)$0
-		'''
