@@ -212,14 +212,14 @@ start_extempore = ->
   ###
 
 
-
-
-
+###*
+# Wrap some expression with (onbeat measure beat (...))
 # mikele June 9, 2018
-# does not seem to work!
-wrapbeat = ->
-  # inspired from
-  # https://discuss.atom.io/t/snippets-get-the-selection/16156/8
+# code from
+# https://discuss.atom.io/t/snippets-get-the-selection/16156/8
+###
+
+wrapwithonbeat = ->
   # Make sure we are in an Editor window
   editor = atom.workspace.getActiveTextEditor()
   # If there is currently selected text then send it
@@ -227,17 +227,56 @@ wrapbeat = ->
   text = selection.getText() # A selection is an object with a bunch of information attached, so we need to get the text from it.
   prefix = "(onbeat 4 0"
   suffix = ")"
-
   # This block makes sure that there are spaces between the prefix, suffix, and content. In the case of the example tag, this is necessary.
   if text[0] != " "
     prefix = prefix + " "
   if text[text.length - 1] != " "
     suffix = " " + suffix
-
   # insertText() replaces the whole selection. The options argument makes sure that the resulting text is selected.
   selection.insertText(prefix + selection.getText() + suffix, {select: true})
   return
 
+
+
+wrapwithlet = ->
+  editor = atom.workspace.getActiveTextEditor()
+  selection = editor.getLastSelection()
+  text = selection.getText()
+  prefix = "(let ((i 0))\n   "
+  suffix = ")"
+  if text[0] != " "
+    prefix = prefix + " "
+  if text[text.length - 1] != " "
+    suffix = " " + suffix
+  selection.insertText(prefix + selection.getText() + suffix, {select: true})
+  return
+
+
+wrapwithdotimes = ->
+  editor = atom.workspace.getActiveTextEditor()
+  selection = editor.getLastSelection()
+  text = selection.getText()
+  prefix = "(dotimes ((i 10))"
+  suffix = ")"
+  if text[0] != " "
+    prefix = prefix + " "
+  if text[text.length - 1] != " "
+    suffix = " " + suffix
+  selection.insertText(prefix + selection.getText() + suffix, {select: true})
+  return
+
+wrapwithbegin = ->
+  editor = atom.workspace.getActiveTextEditor()
+  selection = editor.getLastSelection()
+  text = selection.getText()
+  prefix = "(begin\n "
+  suffix = ")"
+  if text[0] != " "
+    prefix = prefix + " "
+  if text[text.length - 1] != " "
+    suffix = " " + suffix
+  selection.insertText(prefix + selection.getText() + suffix, {select: true})
+  return
 
 
 
@@ -246,7 +285,10 @@ module.exports =
     atom.commands.add 'atom-workspace', 'extempore-atom:Connect', @Connect
     atom.commands.add 'atom-workspace', 'extempore-atom:Disconnect', @Disconnect
     atom.commands.add 'atom-text-editor', 'extempore-atom:Evaluate', @Evaluate
-    atom.commands.add 'atom-text-editor', 'extempore-atom:Wrapbeat', @Wrapbeat
+    atom.commands.add 'atom-text-editor', 'extempore-atom:Wrapwithonbeat', @Wrapwithonbeat
+    atom.commands.add 'atom-text-editor', 'extempore-atom:Wrapwithlet', @Wrapwithlet
+    atom.commands.add 'atom-text-editor', 'extempore-atom:Wrapwithdotimes', @Wrapwithdotimes
+    atom.commands.add 'atom-text-editor', 'extempore-atom:Wrapwithonbegin', @Wrapwithonbegin
     #atom.commands.add 'atom-text-editor', 'extempore-atom:Start Extempore (requires term2)', @StartExtempore
     #atom.commands.add('atom-workspace', "extempore-atom:Panic", this.Panic);
     return
@@ -259,9 +301,18 @@ module.exports =
   Evaluate: ->
     evaluate()
     return
-  Wrapbeat: ->
-    wrapbeat()
-    return
   StartExtempore: ->
     start_extempore()
+    return
+  Wrapwithonbeat: ->
+    wrapwithonbeat()
+    return
+  Wrapwithdotimes: ->
+    wrapwithdotimes()
+    return
+  Wrapwithlet: ->
+    wrapwithlet()
+    return
+  Wrapwithonbegin: ->
+    wrapwithbegin()
     return

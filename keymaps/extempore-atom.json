@@ -6,6 +6,9 @@
     "alt-e": "extempore-atom:Evaluate",
     "cmd-e": "extempore-atom:Evaluate",
     "ctrl-space": "extempore-atom:Evaluate",
-    "alt-i": "extempore-atom:Wrapbeat"
+    "alt-1": "extempore-atom:Wrapwithonbeat",
+    "alt-2": "extempore-atom:Wrapwithlet",
+    "alt-3": "extempore-atom:Wrapwithdotimes",
+    "alt-4": "extempore-atom:Wrapwithonbegin"
   }
 }

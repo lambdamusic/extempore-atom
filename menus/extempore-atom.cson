@@ -25,8 +25,20 @@
           'command': 'extempore-atom:Evaluate'
         },
         {
-          'label': 'Wrap with beat?'
-          'command': 'extempore-atom:Wrapbeat'
+          'label': 'Wrap with onbeat'
+          'command': 'extempore-atom:Wrapwithonbeat'
+        },
+        {
+          'label': 'Wrap with let'
+          'command': 'extempore-atom:Wrapwithlet'
+        },
+        {
+          'label': 'Wrap with dotimes'
+          'command': 'extempore-atom:Wrapwithdotimes'
+        },
+        {
+          'label': 'Wrap with begin'
+          'command': 'extempore-atom:Wrapwithonbegin'
         }
       ]
     ]
