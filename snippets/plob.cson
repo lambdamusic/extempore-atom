@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	plob:
+		prefix: "plob"
+		body: "(plob ${1:1} ${2:1} ${3:c4} ${4:90} ${5:1} ${6:0})$0"

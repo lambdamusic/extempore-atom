@@ -1,0 +1,5 @@
+# Generated with Atomizr – https://atom.io/packages/atomizr
+".source.extempore":
+	pl:
+		prefix: "pl"
+		body: "(pl ${1:c4} ${3:90} ${4:1} ${5:0})$0"
